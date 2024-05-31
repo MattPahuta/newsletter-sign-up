@@ -18,7 +18,9 @@ Date: June 2024
   /* Primary Colors */
   --clr-tomato: hsl(4, 100%, 67%);
   --clr-pale-navy: hsl(235, 18%, 26%);
+  --clr-dark-navy: hsl(234, 29%, 20%);
   /* Neutral Colors */
+  --clr-white: hsl(0, 0%, 100%);
   --clr-gray: hsl(231, 7%, 60%);
   --clr-charcoal-gray: hsl(235, 18%, 26%);
   --clr-dark-slate-gray: hsl(234, 29%, 20%);
@@ -71,15 +73,13 @@ p, h1, h2, h3, h4, h5, h6 {
 body {
   background-color: var(--clr-pale-navy);
   display: grid;
-  place-items: center;
-  font-family: var(--ff-primary);
+  font-family: var(--ff-sans);
   font-size: var(--fs-400);
   line-height: 1.5;  
-
-
 }
 
 .wrapper {
+  min-height: 100vh;
   max-width: 1160px;
   margin-inline: auto;
 }
@@ -89,24 +89,86 @@ h1 {
   text-wrap: balance;
 }
 
-button.button {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  cursor: pointer;
+.card {
+  min-height: 100vh;
+  background-color: var(--clr-white);
+}
 
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-text > * {
+  margin-bottom: 1.5rem;
+}
+
+.card-text h1 {
+  font-size: var(--fs-600);
+}
+
+.card-text ul {
+  padding: 0;
+  list-style: none;
+}
+
+.card-text__list-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.card-text__list-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.card-text__list-item::before {
+  content: url("../images/icon-list.svg");
+}
+
+.subscribe-card {
+
+}
+
+.success-card {
+
+}
+
+.card-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.email-input {
+  border-radius: 8px;
+  border-style: solid;
+}
+
+
+.button {
+  border: none;
+  color: var(--clr-white);
+  background-color: var(--clr-dark-navy);
+  margin-top: 1rem;
+  padding: 0.25em 0.75em;
+  min-height: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+  
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  font-weight: 700;
 
   transition: 220ms all ease-in-out;
 }
 
 @media screen and (-ms-high-contrast: active) {
-  button.button {
+  .button {
     border: 2px solid currentcolor;
   }
 }
+
+
 
 .button:hover,
 .button:focus-visible {
