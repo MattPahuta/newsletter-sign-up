@@ -14,7 +14,7 @@ Date: June 2024
   --fs-400: 1rem;
   --fs-500: 1.125rem;
   --fs-600: 2.5rem;
-  --fs-700: 3rem;
+  --fs-700: 3.125rem;
   /* Primary Colors */
   --clr-tomato: hsl(4, 100%, 67%);
   --clr-pale-navy: hsl(235, 18%, 26%);
@@ -26,8 +26,8 @@ Date: June 2024
   --clr-dark-slate-gray: hsl(234, 29%, 20%);
   
   /* Border radius */
-  --br-soft: 1rem;
-  --br-round: 50%;
+  --br-soft: 8px;
+  --br-med: 20px;
   
 
 }
@@ -73,37 +73,59 @@ p, h1, h2, h3, h4, h5, h6 {
 body {
   background-color: var(--clr-pale-navy);
   display: grid;
+  place-content: center;
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
   line-height: 1.5;  
 }
 
 .wrapper {
-  min-height: 100vh;
-  max-width: 1160px;
+  /* max-width: 1160px; */
   margin-inline: auto;
 }
 
-h1 {
-  line-height: 1.05;
-  text-wrap: balance;
+.card {
+  max-width: 58rem;
+  background-color: var(--clr-white);
+  border-radius: var(--br-med);
+  overflow: hidden;
+  display: grid;
 }
 
-.card {
-  min-height: 100vh;
-  background-color: var(--clr-white);
+
+
+.card-image {
+  width: 100%;
 }
 
 .card-content {
-  padding: 1.5rem;
+  padding: 2.5rem 1.5rem;
 }
 
 .card-text > * {
   margin-bottom: 1.5rem;
 }
 
-.card-text h1 {
+.card-title {
+  line-height: 1.05;
+  text-wrap: balance;
   font-size: var(--fs-600);
+}
+
+@media (min-width: 60rem) {
+  .card {
+    padding: 1.5rem;
+    grid-template-columns: 1fr auto;
+  }
+  .card picture {
+    order: 2;
+  }
+}
+
+@media (min-width: 60rem) {
+  .card-title {
+    font-size: var(--fs-700);
+  }
 }
 
 .card-text ul {
@@ -133,12 +155,25 @@ h1 {
 }
 
 .card-form {
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 700;
 }
 
 .email-input {
-  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  border-radius: var(--br-soft);
   border-style: solid;
 }
 
@@ -147,10 +182,9 @@ h1 {
   border: none;
   color: var(--clr-white);
   background-color: var(--clr-dark-navy);
-  margin-top: 1rem;
-  padding: 0.25em 0.75em;
+  padding: 1em 0.75em;
   min-height: 44px;
-  border-radius: 8px;
+  border-radius: var(--br-soft);
   cursor: pointer;
   
   display: inline-flex;

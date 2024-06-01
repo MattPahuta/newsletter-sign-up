@@ -16,12 +16,12 @@
     <!-- Sign-up form start -->
     <section class="card subscribe-card">
       <picture>
-        <source srcset="./images/illustration-sign-up-desktop.svg" media="(min-width: 37.5rem)">
-        <img src="./images/illustration-sign-up-mobile.svg" alt="">
+        <source srcset="./images/illustration-sign-up-desktop.svg" media="(min-width: 60rem)">
+        <img src="./images/illustration-sign-up-mobile.svg" alt="" class="card-image">
       </picture>
       <div class="card-content">
         <div class="card-text">
-          <h1>Stay updated!</h1>
+          <h1 class="card-title">Stay updated!</h1>
           <p>Join 60,000+ product managers receiving monthly updates on:</p>
           <ul>
             <li class="card-text__list-item">Product discovery and building what matters</li>
@@ -30,11 +30,14 @@
           </ul>
         </div>
         <form class="card-form">
-          <div class="label-container">
-            <label for="email">Email address</label>
-            <p class="email-error"></p>
+          <div class="form-group">
+            <div class="label-container">
+              <label for="email">Email address</label>
+              <p class="email-error"></p>
+            </div>
+            <input type="email" id="email" class="email-input" placeholder="email@company.com">
+
           </div>
-          <input type="email" id="email" class="email-input" placeholder="email@company.com">
           <button id="subscribe-btn" class="button subscribe-btn">Subscribe to monthly newsletter</button>
         </form>
       </div>
