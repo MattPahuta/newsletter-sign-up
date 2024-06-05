@@ -12,50 +12,54 @@
   <script src="./js/main.js" defer></script>
 </head>
 <body>
-  <main class="wrapper">
-    <!-- Sign-up form start -->
-    <section class="card subscribe-card">
-      <picture>
-        <source srcset="./images/illustration-sign-up-desktop.svg" media="(min-width: 60rem)">
-        <img src="./images/illustration-sign-up-mobile.svg" alt="" class="card-image">
-      </picture>
-      <div class="card-content">
-        <div class="card-text">
-          <h1 class="card-title">Stay updated!</h1>
-          <p>Join 60,000+ product managers receiving monthly updates on:</p>
-          <ul>
-            <li class="card-text__list-item">Product discovery and building what matters</li>
-            <li class="card-text__list-item">Measuring to ensure updates are a success</li>
-            <li class="card-text__list-item">And much more!</li>
-          </ul>
-        </div>
-        <form class="card-form">
-          <div class="form-group">
-            <div class="label-container">
-              <label for="email">Email address</label>
-              <p class="email-error"></p>
-            </div>
-            <input type="email" id="email" class="email-input" placeholder="email@company.com">
-
+  <main>
+    <section class="subscribe">
+      <!-- Sign-up form start -->
+      <div class="card subscribe-card">
+        <picture>
+          <source srcset="./images/illustration-sign-up-desktop.svg" media="(min-width: 60rem)">
+          <img src="./images/illustration-sign-up-mobile.svg" alt="" class="card-image">
+        </picture>
+        <div class="card-content">
+          <div class="card-text">
+            <h1 class="card-title">Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul>
+              <li class="card-text__list-item">Product discovery and building what matters</li>
+              <li class="card-text__list-item">Measuring to ensure updates are a success</li>
+              <li class="card-text__list-item">And much more!</li>
+            </ul>
           </div>
-          <button id="subscribe-btn" class="button subscribe-btn">Subscribe to monthly newsletter</button>
-        </form>
-      </div>
-    </section>
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
-    <!-- <section class="card success-card">
-      <div class="card-content">
-        <img src="./images/icon-success.svg" alt="">
-        <div class="card-text">
-          <h1>Thanks for subscribing!</h1>
-          <p>A confirmation email has been sent to <span id="email-confirm" class="email-confirm">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription.</p>
+          <form class="card-form">
+            <div class="form-group">
+              <div class="label-container">
+                <label for="email">Email address</label>
+                <p class="email-error"></p>
+              </div>
+              <input type="email" id="email" class="email-input" placeholder="email@company.com">
+  
+            </div>
+            <button id="subscribe-btn" class="button subscribe-btn">Subscribe to monthly newsletter</button>
+          </form>
         </div>
-        <button id="dismiss-btn">Dismiss message</button>
       </div>
-    </section>     -->
-    <!-- Success message end -->
+      <!-- Sign-up form end -->
+
+      <!-- Success message start -->
+      <div class="card success-card hidden">
+        <div class="card-content success-card-content">
+          <div class="success-inner">
+            <img src="./images/icon-success.svg" alt="" class="success-icon">
+            <div class="card-text">
+              <h1 class="card-title">Thanks for subscribing!</h1>
+              <p>A confirmation email has been sent to <span id="email-confirm" class="email-confirm">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription.</p>
+            </div>
+          </div>
+          <button id="dismiss-btn" class="button dismiss-btn">Dismiss message</button>
+        </div>
+      </div>
+      <!-- Success message end -->
+    </section>
 
   </main>
  
