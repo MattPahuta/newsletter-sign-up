@@ -20,7 +20,7 @@
           <source srcset="./images/illustration-sign-up-desktop.svg" media="(min-width: 60rem)">
           <img src="./images/illustration-sign-up-mobile.svg" alt="" class="card-image">
         </picture>
-        <div class="card-content">
+        <div class="subscribe-card__content">
           <div class="card-text">
             <h1 class="card-title">Stay updated!</h1>
             <p>Join 60,000+ product managers receiving monthly updates on:</p>
@@ -46,17 +46,15 @@
       <!-- Sign-up form end -->
 
       <!-- Success message start -->
-      <div class="card success-card hidden">
-        <div class="card-content success-card-content">
-          <div class="success-inner">
-            <img src="./images/icon-success.svg" alt="" class="success-icon">
-            <div class="card-text">
-              <h1 class="card-title">Thanks for subscribing!</h1>
-              <p>A confirmation email has been sent to <span id="email-confirm" class="email-confirm">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription.</p>
-            </div>
+      <div class="success-card hidden">
+        <div class="success-card__content">
+          <img src="./images/icon-success.svg" alt="" class="success-icon">
+          <div class="card-text">
+            <h1 class="card-title">Thanks for subscribing!</h1>
+            <p>A confirmation email has been sent to <strong><span id="email-confirm" class="email-confirm">ash@loremcompany.com</span></strong>. Please open it and click the button inside to confirm your subscription.</p>
           </div>
-          <button id="dismiss-btn" class="button dismiss-btn">Dismiss message</button>
         </div>
+        <button id="dismiss-btn" class="button dismiss-btn">Dismiss message</button>
       </div>
       <!-- Success message end -->
     </section>

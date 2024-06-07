@@ -113,43 +113,23 @@ body {
   
 }
 
-.card {
+.card,
+.success-card {
   margin-inline: auto;
   background-color: var(--clr-white);
   overflow: hidden;
   display: grid;
 }
 
-.hidden {
-  display: none;
-}
-
-@media (min-width: 30.75rem ) {
-  .card {
-    border-radius: var(--br-med);
-  }
-  .subscribe-card {
-    width: min(58rem, 100% - 3rem);
-  }
-  .success-card {
-    width: min(31.5rem, 100% - 3rem);
-  }
-}
-
-/* .subscribe-card {
-  max-width: 58rem;
-*/
-
 .card-image {
   width: 100%;
 }
 
-.card-content {
+.subscribe-card__content {
   padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-evenly; */
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 1.5rem;
 }
 
@@ -182,9 +162,7 @@ body {
   content: url("../images/icon-list.svg");
 }
 
-
 .card-form {
-  /* margin-top: 40px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -208,11 +186,10 @@ body {
 }
 
 /* Success Card */
-
 .success-card {
-  /* display: flex;
+  padding: 1.5rem;
+  display: flex;
   flex-direction: column;
-  justify-content: center; */
   position: fixed;
   top: 0;
   bottom: 0;
@@ -220,7 +197,7 @@ body {
   right: 0;
 }
 
-.success-card-content {
+.success-card__content {
   padding-top: 8rem;
 }
 
@@ -228,6 +205,41 @@ body {
   margin-bottom: 40px;
   width: 64px;
   height: 64px;
+}
+
+.dismiss-btn {
+  margin-top: auto;
+}
+
+/* ToDo: change card-title to clamp? */
+@media (min-width: 30.75rem) {
+  .success-card {
+    border-radius: var(--br-med);
+  }
+  .card-title {
+    font-size: var(--fs-700);
+  }
+}
+
+@media (min-width: 30.75rem ) {
+  .card {
+    border-radius: var(--br-med);
+  }
+  .subscribe-card {
+    width: min(58rem, 100% - 3rem);
+  }
+  .success-card {
+    width: min(31.5rem, 100% - 3rem);
+    padding: 4rem;
+    position: relative;
+    display: flex;
+  }
+  .success-card__content {
+    padding-top: 0;
+  }
+  .dismiss-btn {
+    margin-top: 0.5rem;
+  }
 }
 
 
@@ -239,7 +251,7 @@ body {
   .card picture {
     order: 2;
   }
-  .card-content {
+  .subscribe-card__content {
     padding-left: 2.5rem;
     padding-right: 4rem;
     gap: 0;
@@ -254,4 +266,8 @@ body {
   .card-form {
     gap: 1.75rem;
   }
+}
+
+.hidden {
+  display: none;
 }
