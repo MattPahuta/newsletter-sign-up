@@ -40,7 +40,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL](https://your-solution-url.com)
+- Solution URL: [solution URL](https://www.frontendmentor.io/solutions/responsive-newsletter-signup-form-using-vanilla-javascript-NG3h7fdGbY)
 - Live Site URL: [Live site](https://newsletter-sign-up-bay-nine.vercel.app/)
 
 ## My process
