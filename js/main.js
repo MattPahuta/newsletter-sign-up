@@ -6,31 +6,25 @@ const dismissBtn = document.getElementById('dismiss-btn');
 // update success message with submitted email
 function updateSuccessMessage(email) {
   const confirmedEmail = document.getElementById('confirmed-email');
-  console.log('updateSuccessMessage function firing');
   confirmedEmail.textContent = email;
 }
 
 // toggle subscribe state - form card/success message
 function toggleCard() {
-  const subscribeCard = document.getElementById('subscribe-card');
-  const successCard = document.getElementById('success-card');
-
-  console.log('toggleCard function firing');
-  subscribeCard.classList.toggle('hidden');
-  successCard.classList.toggle('hidden');
+  const signup = document.getElementById('signup');
+  const success = document.getElementById('success');
+  signup.classList.toggle('hidden');
+  success.classList.toggle('hidden');
   // If error message is present, clear content and hide
   if (emailError.style.display === 'block') {
     emailError.style.display = 'none';
-    emailError.textContent = '';
   }
 }
 
 // handle error messaging
 function handleErrorState() {
-  emailError.textContent = 'Valid email required';
-  emailError.style.display = 'block'
-  emailInput.classList.add('error-state')
-  console.log('handleErrorMessag function firing')
+  emailError.style.display = 'block';
+  emailInput.classList.add('error-state');
 }
 
 // validate email submitted
@@ -46,17 +40,12 @@ function handleSubmit(e) {
   const isValidEmail = validateEmail(email); // true or false
 
   if (!isValidEmail) {
-    console.log(isValidEmail)
     return handleErrorState();
   }
   if (isValidEmail) {
-    console.log(isValidEmail)
     updateSuccessMessage(email);
     toggleCard();
   }
-
-  console.log('submitted email: ', email);
-  console.log('form submitted');
   emailInput.value = '';
 }
 

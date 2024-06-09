@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,51 +15,52 @@
   <main>
     <section class="subscribe">
       <!-- Sign-up form start -->
-      <div id="subscribe-card" class="card subscribe-card">
-        <picture>
-          <source srcset="./images/illustration-sign-up-desktop.svg" media="(min-width: 60rem)">
-          <img src="./images/illustration-sign-up-mobile.svg" alt="" class="card-image">
-        </picture>
-        <div class="subscribe-card__content">
-          <div class="card-text">
-            <h1 class="card-title">Stay updated!</h1>
-            <p>Join 60,000+ product managers receiving monthly updates on:</p>
-            <ul>
-              <li class="card-text__list-item">Product discovery and building what matters</li>
-              <li class="card-text__list-item">Measuring to ensure updates are a success</li>
-              <li class="card-text__list-item">And much more!</li>
-            </ul>
-          </div>
-          <form novalidate id="subscribe-form" class="card-form">
-            <div class="form-group">
-              <div class="label-container">
-                <label for="email">Email address</label>
-                <p class="email-error" id="email-error"></p>
-              </div>
-              <input type="email" name="email" id="email" class="email-input" placeholder="email@company.com">
-  
+      <div id="signup" class="wrapper signup">
+        <!-- ToDo: update 'subscribe' to 'signup' -->
+        <div id="subscribe-card" class="subscribe-card">
+          <picture>
+            <source srcset="./images/illustration-sign-up-desktop.svg" media="(min-width: 60rem)">
+            <img src="./images/illustration-sign-up-mobile.svg" alt="Colorful info graphic showing tablet computer screen and graph scorecard" class="card-image">
+          </picture>
+          <div class="subscribe-card__content">
+            <div class="card-text">
+              <h1 class="card-title">Stay updated!</h1>
+              <p>Join 60,000+ product managers receiving monthly updates on:</p>
+              <ul>
+                <li class="card-text__list-item">Product discovery and building what matters</li>
+                <li class="card-text__list-item">Measuring to ensure updates are a success</li>
+                <li class="card-text__list-item">And much more!</li>
+              </ul>
             </div>
-            <button type="submit" id="subscribe-btn" class="button subscribe-btn gradient-btn">Subscribe to monthly newsletter</button>
-          </form>
+            <form novalidate id="subscribe-form" class="card-form">
+              <div class="form-group">
+                <div class="label-container">
+                  <label for="email">Email address</label>
+                  <p class="email-error" id="email-error" aria-live="polite">Valid email required</p>
+                </div>
+                <input type="email" name="email" id="email" class="email-input" placeholder="email@company.com" aria-describedby="email-error">
+              </div>
+              <button type="submit" id="subscribe-btn" class="button subscribe-btn gradient-btn">Subscribe to monthly newsletter</button>
+            </form>
+          </div>
         </div>
       </div>
       <!-- Sign-up form end -->
-
       <!-- Success message start -->
-      <div id="success-card" class="success-card hidden">
-        <div class="success-card__content">
-          <img src="./images/icon-success.svg" alt="" class="success-icon">
-          <div class="card-text">
-            <h1 class="card-title">Thanks for subscribing!</h1>
-            <p>A confirmation email has been sent to <strong><span id="confirmed-email" class="confirmed-email"></span></strong>. Please open it and click the button inside to confirm your subscription.</p>
+      <div id="success" class="wrapper success hidden">
+        <div id="success-card" class="success-card">
+          <div class="success-card__content">
+            <img src="./images/icon-success.svg" alt="" class="success-icon">
+            <div class="card-text">
+              <h1 class="card-title">Thanks for subscribing!</h1>
+              <p>A confirmation email has been sent to <strong><span id="confirmed-email" class="confirmed-email"></span></strong>. Please open it and click the button inside to confirm your subscription.</p>
+            </div>
           </div>
+          <button id="dismiss-btn" class="button dismiss-btn gradient-btn">Dismiss message</button>
         </div>
-        <button id="dismiss-btn" class="button dismiss-btn gradient-btn">Dismiss message</button>
       </div>
       <!-- Success message end -->
     </section>
-
   </main>
- 
 </body>
 </html>

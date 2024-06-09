@@ -3,10 +3,7 @@ Author: Matt Pahuta
 https://www.mattpahuta.com
 Date: June 2024
 */
-
-/* **************** */
 /* Custom Variables */
-/* **************** */
 :root {
   /* Font */
   --ff-sans: "Roboto", sans-serif;
@@ -71,7 +68,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* base styles and components */
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: var(--clr-pale-navy);
   color: var(--clr-primary);
   display: grid;
@@ -81,8 +78,13 @@ body {
   line-height: 1.5;  
 }
 
-.subscribe {
-  position: relative;
+.wrapper {
+  margin-inline: auto;
+  /* background-color: var(--clr-white); */
+}
+
+.hidden {
+  display: none;
 }
 
 .button {
@@ -139,7 +141,12 @@ body {
   opacity: 1;
 }
 
-.card,
+.subscribe {
+  position: relative;
+}
+
+/* .card, */
+.subscribe-card,
 .success-card {
   margin-inline: auto;
   background-color: var(--clr-white);
@@ -201,11 +208,6 @@ body {
   gap: 0.5rem;
 }
 
-/* .form-group label {
-  font-size: 0.875rem;
-  font-weight: 700;
-} */
-
 .form-group .label-container {
   display: flex;
   justify-content: space-between;
@@ -241,6 +243,7 @@ body {
 /* Success Card */
 .success-card {
   padding: 1.5rem;
+  /* display: none; */
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -265,20 +268,19 @@ body {
 }
 
 @media (min-width: 30.75rem ) {
+  /* .card {
+    border-radius: var(--br-med);
+  } */
+  .subscribe-card {
+    border-radius: var(--br-med);
+  }
   .success-card {
     border-radius: var(--br-med);
-  }
-  .card {
-    border-radius: var(--br-med);
-  }
-  .subscribe-card {
-    width: min(58rem, 100% - 3rem);
   }
   .success-card {
     width: min(31.5rem, 100% - 3rem);
     padding: 4rem;
     position: relative;
-    display: flex;
   }
   .success-card__content {
     padding-top: 0;
@@ -289,11 +291,18 @@ body {
 }
 
 @media (min-width: 60rem) {
-  .card {
+  .wrapper {
+    min-height: auto;
+  }
+  .signup {
+    width: min(58rem, 100% - 3rem); 
+    border-radius: var(--br-med);
+  }
+  .subscribe-card {
     padding: 1.5rem;
     grid-template-columns: 1fr auto;
   }
-  .card picture {
+  .subscribe-card picture {
     order: 2;
   }
   .subscribe-card__content {
@@ -307,8 +316,4 @@ body {
   .card-form {
     gap: 1.75rem;
   }
-}
-
-.hidden {
-  display: none;
 }
