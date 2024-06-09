@@ -1,6 +1,8 @@
 # Frontend Mentor - Newsletter sign-up form with success message solution
 
-This is a solution to the [Newsletter sign-up form with success message challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Newsletter sign-up form with success message challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv). 
+
+The solution features custom error checking and messaging for the form and a mobile-first approach to the design.
 
 ## Table of contents
 
@@ -14,7 +16,6 @@ This is a solution to the [Newsletter sign-up form with success message challeng
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -32,7 +33,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./project-ss.jpg)
+![](./project-ss-error-state.jpg)
+![](./project-ss-success-state.jpg)
 
 
 ### Links
@@ -53,33 +56,43 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I used Keith Grant's method (linked below) to handle smoothly transitioning my gradient-on-hover buttons. Worked perfectly for this use case.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.gradient-btn::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: var(--bg-gradient);
+  z-index: -1;
+  transition: 220ms all ease-in-out;
+  opacity: 0;
+  border-radius: var(--br-soft);
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+.gradient-btn:hover::before,
+.gradient-btn:focus-visible::before {
+  opacity: 1;
+}
+
+.card {
+  margin-inline: auto;
+  background-color: var(--clr-white);
+  overflow: hidden;
+  display: grid;
 }
 ```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+This was great practice for handling a simple form and simulated state changes using vanilla JavaScript. In the future I'll look to utilizing React to build these sorts of forms.
 
 ### Useful resources
 
 - [Keith J. Grant](https://keithjgrant.com/posts/2017/07/transitioning-gradients/) - I was briefly stumped trying to smoothly transition of the submit button using a gradient background. This is a somewhat dated article but still proved really useful.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
 
 ## Author
 
@@ -87,8 +100,3 @@ Use this section to outline areas that you want to continue focusing on in futur
 - Frontend Mentor - [@mattpahuta](https://www.frontendmentor.io/profile/MattPahuta)
 - Twitter - [@mattpahuta](https://www.twitter.com/MattPahuta)
 - LinkedIn - [Matt Pahuta](www.linkedin.com/in/mattpahuta)
-
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.

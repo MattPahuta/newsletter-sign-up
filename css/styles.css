@@ -12,7 +12,7 @@ Date: June 2024
   /* Primary Colors */
   --clr-primary: hsl(234, 29%, 20%);
   --clr-accent: hsl(4, 100%, 67%);
-  --clr-pale-navy: hsl(235, 18%, 26%);
+  --bg-primary: hsl(235, 18%, 26%);
   /* Neutral Colors */
   --clr-white: hsl(0, 0%, 98%);
   --clr-gray: hsl(231, 7%, 60%);
@@ -68,8 +68,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* base styles and components */
 body {
-  /* min-height: 100vh; */
-  background-color: var(--clr-pale-navy);
+  background-color: var(--bg-primary);
   color: var(--clr-primary);
   display: grid;
   place-content: center;
@@ -78,9 +77,12 @@ body {
   line-height: 1.5;  
 }
 
+.subscribe {
+  position: relative;
+}
+
 .wrapper {
   margin-inline: auto;
-  /* background-color: var(--clr-white); */
 }
 
 .hidden {
@@ -141,13 +143,7 @@ body {
   opacity: 1;
 }
 
-.subscribe {
-  position: relative;
-}
-
-/* .card, */
-.subscribe-card,
-.success-card {
+.card {
   margin-inline: auto;
   background-color: var(--clr-white);
   overflow: hidden;
@@ -158,7 +154,7 @@ body {
   width: 100%;
 }
 
-.subscribe-card__content {
+.signup-card__content {
   padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -243,7 +239,6 @@ body {
 /* Success Card */
 .success-card {
   padding: 1.5rem;
-  /* display: none; */
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -268,10 +263,7 @@ body {
 }
 
 @media (min-width: 30.75rem ) {
-  /* .card {
-    border-radius: var(--br-med);
-  } */
-  .subscribe-card {
+  .signup-card {
     border-radius: var(--br-med);
   }
   .success-card {
@@ -298,14 +290,14 @@ body {
     width: min(58rem, 100% - 3rem); 
     border-radius: var(--br-med);
   }
-  .subscribe-card {
+  .signup-card {
     padding: 1.5rem;
     grid-template-columns: 1fr auto;
   }
-  .subscribe-card picture {
+  .signup-card picture {
     order: 2;
   }
-  .subscribe-card__content {
+  .signup-card__content {
     padding-left: 2.5rem;
     padding-right: 4rem;
     gap: 0;
