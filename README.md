@@ -77,7 +77,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Keith J. Grant](https://keithjgrant.com/posts/2017/07/transitioning-gradients/) - I was briefly stumped trying to smoothly transition of the submit button using a gradient background. This is a somewhat dated article but still proved really useful.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 

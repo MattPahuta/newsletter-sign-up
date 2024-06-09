@@ -1,31 +1,33 @@
-const subscribeCard = document.getElementById('subscribe-card');
-const successCard = document.getElementById('success-card');
 const form = document.getElementById('subscribe-form');
 const emailInput = document.getElementById('email');
-const confirmedEmail = document.getElementById('confirmed-email');
+const emailError = document.getElementById('email-error');
 const dismissBtn = document.getElementById('dismiss-btn');
 
 // update success message with submitted email
 function updateSuccessMessage(email) {
+  const confirmedEmail = document.getElementById('confirmed-email');
   console.log('updateSuccessMessage function firing');
   confirmedEmail.textContent = email;
 }
 
 // toggle subscribe state - form card/success message
 function toggleCard() {
+  const subscribeCard = document.getElementById('subscribe-card');
+  const successCard = document.getElementById('success-card');
 
-  // check if error state exists
-  // if (emailInput.classList.contains('error-state')) {
-  //   emailInput.classList.remove('error-state');
-  // }
   console.log('toggleCard function firing');
   subscribeCard.classList.toggle('hidden');
   successCard.classList.toggle('hidden');
+  // If error message is present, clear content and hide
+  if (emailError.style.display === 'block') {
+    emailError.style.display = 'none';
+    emailError.textContent = '';
+  }
 }
 
 // handle error messaging
 function handleErrorState() {
-  const emailError = document.getElementById('email-error');
+  emailError.textContent = 'Valid email required';
   emailError.style.display = 'block'
   emailInput.classList.add('error-state')
   console.log('handleErrorMessag function firing')
@@ -41,8 +43,7 @@ function handleSubmit(e) {
   e.preventDefault();
   const formDataEntries = new FormData(e.target).entries();
   const { email } = Object.fromEntries(formDataEntries);
-
-  const isValidEmail = validateEmail(email);
+  const isValidEmail = validateEmail(email); // true or false
 
   if (!isValidEmail) {
     console.log(isValidEmail)
@@ -59,7 +60,7 @@ function handleSubmit(e) {
   emailInput.value = '';
 }
 
-// if error state is active, remove on focus of input
+// if error state for input is active, remove on focus of input
 emailInput.addEventListener('focus', (event) => {
   if (event.target.classList.contains('error-state')) {
     event.target.classList.remove('error-state');
@@ -67,5 +68,4 @@ emailInput.addEventListener('focus', (event) => {
 })
 
 form.addEventListener('submit', handleSubmit);
-
 dismissBtn.addEventListener('click', toggleCard);
